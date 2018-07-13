@@ -1,19 +1,18 @@
 body {
-	background-image: url(../img/bg.jpg);
-	
-  background-color: deeppink;
-  font-family: "comic sans ms";
+  background-image: url(../img/bg.jpg);	
+  //background-color: deeppink;
+  font-family: "Trebuchet MS", "Lucida Console", monospace;  
 }
 
 header {
-	opacity: 0.5;
+  opacity: 0.5;
   background-color: #00ff00;
   text-align: center;
 }
 
 #pizza-menu {
-	opacity: 0.9;
-  background-color: #ff00ff;
+  opacity: 0.85;
+  //background-color: #ff00ff;
   margin: auto; /*centers the box*/  
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +29,7 @@ p {
 }
 
 div {
-	opacity: 1 !important;
+  opacity: 1 !important;
   background-color: lightblue;
   justify-content: center;
   text-align: left;
@@ -39,6 +38,10 @@ div {
   padding: 10px;
   margin: 25px;
   border: 2px solid black;
+}
+
+button {
+	font-family: "Trebuchet MS", "Lucida Console", monospace;  
 }
 
 .btn-box, .result-box {
