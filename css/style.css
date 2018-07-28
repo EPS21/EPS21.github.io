@@ -1,23 +1,31 @@
-body {			
+body {
 	background-color: #fff;
+}
+
+.navbar-default{
+  background:transparent;
+  background-image:none;
+  border-color:transparent;
+  box-shadow:none;
 }
 
 nav {
 	position: fixed !important;
 	width: 100%;
 	z-index: 100;
+	background: rgba(128, 128, 128, 0.7);
 }
 
 h1 {
 	text-align: center !important;
 }
 
-header {	
+header {
 	text-align: center;
 	background-attachment: scroll;
 	background: url(../img/cover.jpg) no-repeat;
 	/*background-position: center center;*/
-	background-size:cover; /*autoscales image*/		
+	background-size:cover; /*autoscales image*/
 	width: 100%;
 	/*display: block;
 	height: auto;*/
@@ -26,7 +34,7 @@ header {
 	color: #fff;
 }
 
-.head-main {	
+.head-main {
 	text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.9);
 	font-variant: small-caps;
 	color: #fff;
