@@ -20,6 +20,10 @@ h1 {
 	text-align: center !important;
 }
 
+.modal-list {
+	font-weight: bold;
+}
+
 header {
 	text-align: center;
 	background-attachment: scroll;
