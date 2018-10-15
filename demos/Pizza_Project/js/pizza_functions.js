@@ -27,9 +27,7 @@ function myFunction() {
 	runningTotal = sizePrice;
 	getMeat(runningTotal,txt);	
 }
-/***************************
- ***** meat function *******
- ***************************/
+
 function getMeat(runningTotal, txt) {
 	var meatTotal = 0;	
 	var meatArray = document.getElementsByClassName("meats");
@@ -92,8 +90,7 @@ function getCrust(runningTotal, txt) {
 	// if stuffed crust is selected, adds $3 otherwise no change in price
 	if (crustSelection === "Cheese Stuffed") {
 		runningTotal += stuffedCrustPrice;
-	}
-	
+	}	
 	getSauce(runningTotal, txt);
 		
 }

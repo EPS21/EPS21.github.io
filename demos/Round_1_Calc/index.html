@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Round1 Credit Calculator</title>
+        <link rel="stylesheet" href="./css/your_css_file_here.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    </head>
+    
+    <style>
+        header {
+            background-color: aqua;
+        }
+        body {
+            /*background-color: red;*/
+            text-align: center;
+        }
+        #input-body {
+            margin-left: auto;
+            background-color: rgba(255, 0, 0, 0.486);            
+        }
+        footer {
+            background-color: blue;
+        }        
+    </style>
+
+	<body>
+		<header>
+			<h1>Round1 Credit Calculator</h1>
+        </header>
+
+        <!-- Main Contents -->		
+		<section id="input-body">
+            <div class="container">
+                <h3>
+                <span class="badge badge-pill badge-warning">
+                <input class="x" type="radio" name="memberRadio" value="nonmem" checked>Non-Member 
+                <input class="x" type="radio" name="memberRadio" value="basic">Club Card 
+                <input class="x" type="radio" name="memberRadio" value="silver">Silver 
+                <input class="x" type="radio" name="memberRadio" value="gold">Gold 
+                <input class="x" type="radio" name="memberRadio" value="plat">Platinum
+                <br></span></h3>
+            </div>
+            <div class="container">
+                <h3>                
+                <span class="badge badge-pill badge-dark">
+                <input class="y" type="radio" name="priceRadio" value="10" checked>$10
+                <input class="y" type="radio" name="priceRadio" value="20">$20
+                <input class="y" type="radio" name="priceRadio" value="30">$30
+                <input class="y" type="radio" name="priceRadio" value="50">$50
+                <input class="y" type="radio" name="priceRadio" value="100">$100
+                <br></span></h3>       
+            </div>
+            
+            <button type="submit" class="btn btn-success" onclick="calculatePrice()" value="Submit">Calculate Credits</button>
+
+            <p id="result"></p>
+            <p id="testing1"></p>
+            <p id="testing2"></p>
+            <p id="testing3"></p>            
+		</section>
+		
+		<footer>           
+            <p>
+                A thing made by Eric using pure HTML/CSS/JS oh yeah and bootstrap lol   <br>
+                Protip: never spend $20 with your club card
+            </p>
+        </footer>
+        
+        <script>
+
+            function calculatePrice() {
+                var xArray = document.getElementsByClassName("x");
+                var yArray = document.getElementsByClassName("y");            
+                var cardStatus;
+                var credits = 0;
+                var dollar = 0;
+                var result = 0; // should be handled as decimal                
+
+                // get card status from first radiolist
+                for (i = 0; i < xArray.length; i++) {
+                    if (xArray[i].checked) cardStatus = xArray[i].value;                    
+                }
+                
+                // get dollar amount 
+                for (i = 0; i < yArray.length; i++) {
+                    if (yArray[i].checked) dollar = Number(yArray[i].value);                    
+                }       
+                
+                switch (dollar) { // old values 44, 92, 150, 260, 530
+                    case 10 :
+                        credits = 48; break;
+                    case 20 :
+                        credits = 100; break;
+                    case 30 :
+                        credits = 155; break;
+                    case 50 : 
+                        credits = 300; break;
+                    case 100 :
+                        credits = 750; break;
+                }
+
+                switch (cardStatus) {
+                    case "nonmem" :
+                        break;
+                    case "basic" :
+                        dollar -= 1; break;
+                    case "silver" :
+                        dollar -= 1.25; break;
+                    case "gold" : 
+                        dollar -= 1.5; break;
+                    case "plat" :
+                        dollar -= 1.75; break;
+                }                
+                
+                result = credits / dollar;
+
+                document.getElementById("result").innerHTML = "You get " + result + " credits per dollar";
+                document.getElementById("testing1").innerHTML = "CardStatus: " + cardStatus;
+                document.getElementById("testing2").innerHTML = "Credits: " + credits;
+                document.getElementById("testing3").innerHTML = "Dollar: " + dollar;
+            }       
+        
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>
